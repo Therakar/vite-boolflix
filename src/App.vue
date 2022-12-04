@@ -6,15 +6,18 @@
     import AppHeader from "./components/AppHeader.vue"; //importo il componente header
     import AppMain from "./components/AppMain.vue"; //importo il componente main
 
+    import AppError from "./components/AppError.vue";//importo il componente AppError
     export default {
         name: "App",
         components: {
             AppHeader, //registro il componente header
             AppMain, //registro il componente main
-        },
+            AppError, //registro il componente AppError
+        },  
         data () {
             return {
                 store,
+                error: false,
             }
         },
         methods: {
@@ -36,6 +39,7 @@
 <template>
 
     <AppHeader @performSearch="getData"/> 
+    <AppError />
     <AppMain />
   
 </template>
