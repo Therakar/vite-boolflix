@@ -14,7 +14,9 @@
 
 <template>
     <div>
-
+        <img :src="poster" :alt="title" />
+        <h3>{{title}}</h3>
+        <h4>{{info.original_title || info.original_name}}</h4>
     </div>
 </template>
 
