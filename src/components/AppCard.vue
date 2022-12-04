@@ -14,7 +14,7 @@
             poster() {
                 return this.info.poster_path
                     ? `https://image.tmdb.org/t/p/w342${this.info.poster_path}`
-                    : "https://via.placeholder.com/342x485";
+                    : "https://via.placeholder.com/342x485?text=Locandina+Non+Disponibile";
             }, 
 
         }

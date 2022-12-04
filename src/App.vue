@@ -1,4 +1,3 @@
-
 <script>
     import axios from "axios"; //importo axios
     import { store } from "./store"; //importo store.js
@@ -30,6 +29,8 @@
                     }
                 }).then((response) => {
                     this.store.movies = response.data.results;
+                }).catch((err) =>{ //se si verifica un errore il valore di error viene portato a true 
+                    this.error = true
                 })
             } 
         }
@@ -39,7 +40,7 @@
 <template>
 
     <AppHeader @performSearch="getData"/> 
-    <AppError />
+    <AppError v-if="error"/> <!--finchè error è false non viene visualizzato-->
     <AppMain />
   
 </template>
