@@ -29,6 +29,9 @@
                     }
                 }).then((response) => {
                     this.store.movies = response.data.results;
+                    if (this.error){ //se error = true allora va riportato al vlaore di default (false)
+                        this.error = false
+                    }
                 }).catch((err) =>{ //se si verifica un errore il valore di error viene portato a true 
                     this.error = true
                 })

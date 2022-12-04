@@ -26,6 +26,7 @@
         <img :src="poster" :alt="title" /> <!--locandina-->
         <h3>{{title}}</h3> <!--titolo-->
         <h4>{{info.original_title || info.original_name}}</h4> <!--titolo originale-->
+        <h3>{{info.vote_average}}</h3>
     </div>
 </template>
 
