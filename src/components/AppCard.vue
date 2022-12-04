@@ -1,6 +1,14 @@
 <script>
+    import axios from "axios"; //importo axios
+    import { store } from "../store"; //importo store.js
+
     export default {
-        
+        name: "AppCard",
+        data () {
+            return {
+                store,
+            }
+        }
     }
 </script>
 
