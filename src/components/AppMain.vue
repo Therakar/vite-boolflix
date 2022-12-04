@@ -20,11 +20,11 @@
 <template>
     <section>
         <h2>Movies</h2>
-        <AppCard v-for="movie in store.movies" /> <!--cicla sull'array dei film-->
+        <AppCard v-for="movie in store.movies" :info="movie"/> <!--cicla sull'array dei film-->
     </section>
     <section>
         <h2>Series</h2>
-        <AppCard v-for="tv in store.series" /> <!--cicla sull'array delle serie-->
+        <AppCard v-for="serie in store.series" :info="serie"/> <!--cicla sull'array delle serie-->
     </section>
     
 </template>

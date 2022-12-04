@@ -16,13 +16,26 @@
             return {
                 store,
             }
+        },
+        methods: {
+            getData() {
+                axios.get("https://api.themoviedb.org/3/search/movie",{
+                    params: {
+                        api_key: "c262cf69bfb7c0035c78b3e71fa62b93",
+                        query: this.store.textToSearch,
+                        language: "it-IT"
+                    }
+                }).then((response) => {
+                    this.store.movies = response.data.results;
+                })
+            } 
         }
     }
 </script>
 
 <template>
 
-    <AppHeader /> 
+    <AppHeader @performSearch="getData"/> 
     <AppMain />
   
 </template>

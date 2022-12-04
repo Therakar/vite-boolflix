@@ -4,19 +4,28 @@
 
     export default {
         name: "AppCard",
-        data () {
-            return {
-                store,
-            }
+        props: {
+            info: Object,
+        },
+        computed: {
+            title() {
+                return this.info.title ? this.info.title : this.info.name;
+            },
+            poster() {
+                return this.info.poster_path
+                    ? `https://image.tmdb.org/t/p/w342${this.info.poster_path}`
+                    : "https://via.placeholder.com/342x485";
+            }, 
+
         }
     }
 </script>
 
 <template>
     <div>
-        <img :src="poster" :alt="title" />
-        <h3>{{title}}</h3>
-        <h4>{{info.original_title || info.original_name}}</h4>
+        <img :src="poster" :alt="title" /> <!--locandina-->
+        <h3>{{title}}</h3> <!--titolo-->
+        <h4>{{info.original_title || info.original_name}}</h4> <!--titolo originale-->
     </div>
 </template>
 
